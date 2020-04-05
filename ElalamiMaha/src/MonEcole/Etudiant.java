@@ -59,8 +59,8 @@ public class Etudiant {
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int a) {
-		try {
+	public void setAge(int a) {  
+		try {// exception
 			controle(a);
 		} catch (SaisieErroneeException e) {
 			// TODO Auto-generated catch block
@@ -72,7 +72,7 @@ public class Etudiant {
 		
 	}
 	
-	public static void controle(int a) throws SaisieErroneeException{
+	public static void controle(int a) throws SaisieErroneeException{ //exception
 		if(a<=18) {
 			throw new SaisieErroneeException("Saisie erronee : age incorrect");
 		}
