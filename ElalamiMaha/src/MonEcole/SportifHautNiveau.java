@@ -6,7 +6,7 @@ public class SportifHautNiveau extends Etudiant {
 	private String pole;
 	private String sportPratique;
 	
-	public SportifHautNiveau (String n, String p, int cE, int a, String po, String sp) throws IOException {
+	public SportifHautNiveau (String n, String p, int cE, int a, String po, String sp) throws IOException{
 		super (n, p, cE, a);
 		this.pole = po;
 		this.sportPratique = sp;

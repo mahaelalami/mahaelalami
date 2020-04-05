@@ -11,10 +11,19 @@ public class Etudiant {
 	private int age;
 	
 	public Etudiant (String n, String p, int cE, int a) throws IOException{
-		this.nom = n;
-		this.prenom = p;
-		this.codeEtudiant = cE;
-		this.age = a;
+		try {
+			controle(a);
+			this.nom = n;
+			this.prenom = p;
+			this.codeEtudiant = cE;
+			this.age = a;
+		} catch (SaisieErroneeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+		
 		
 		JSONObject jsonob = new JSONObject ();
 		jsonob.put ("nom", n);
@@ -51,15 +60,28 @@ public class Etudiant {
 		return age;
 	}
 	public void setAge(int a) {
+		try {
+			controle(a);
+		} catch (SaisieErroneeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(a>=18) {
 		}
 		this.age = a;
+		
 	}
 	
+	public static void controle(int a) throws SaisieErroneeException{
+		if(a<=18) {
+			throw new SaisieErroneeException("Saisie erronee : age incorrect");
+		}
+	}
+		}
 	
 	
 	
 	
 	
 	
-}
+	
