@@ -1,30 +1,29 @@
 package mesInterfaces;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JTextField;
-
-import MonEcole.Sportif;
-
-import javax.swing.JButton;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.awt.event.ActionEvent;
 
-public class AjouterEtudiantSHN {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import MonEcole.Musicien;
+import MonEcole.Sportif;
+
+public class AjouterEtudiantMusicien {
 
 	private JFrame frame;
 	private JTextField nom;
 	private JTextField prenom;
 	private JTextField codeEtudiant;
 	private JTextField age;
-	private JTextField pole;
-	private JTextField sportPratique;
-
+	private JTextField instrumentJoue;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -32,7 +31,7 @@ public class AjouterEtudiantSHN {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AjouterEtudiantSHN window = new AjouterEtudiantSHN();
+					AjouterEtudiantMusicien window = new AjouterEtudiantMusicien();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,11 +39,10 @@ public class AjouterEtudiantSHN {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
-	public AjouterEtudiantSHN() {
+	public AjouterEtudiantMusicien() {
 		initialize();
 	}
 	
@@ -54,7 +52,7 @@ public class AjouterEtudiantSHN {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setSize(450, 311);
+		frame.setSize(450, 316);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("Ecole de Haute-Savoie");
 		frame.setBounds(100, 100, 450, 300);
@@ -68,10 +66,10 @@ public class AjouterEtudiantSHN {
 		lblNewLabel.setBounds(128, 11, 206, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Nouvel Etudiant Sportif de Haut Niveau");
+		JLabel lblNewLabel_1 = new JLabel("Nouvel Etudiant Musicien");
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		lblNewLabel_1.setForeground(new Color(255, 160, 122));
-		lblNewLabel_1.setBounds(86, 38, 282, 14);
+		lblNewLabel_1.setBounds(138, 36, 226, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNom = new JLabel("Nom : ");
@@ -108,17 +106,12 @@ public class AjouterEtudiantSHN {
 		lblAge.setBounds(10, 150, 46, 14);
 		frame.getContentPane().add(lblAge);
 		
-		JLabel lblPole = new JLabel("P\u00F4le :");
-		lblPole.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblPole.setForeground(new Color(205, 92, 92));
-		lblPole.setBounds(10, 185, 46, 14);
-		frame.getContentPane().add(lblPole);
+		JLabel lblInstrumentJoue = new JLabel("Instrument joué :");
+		lblInstrumentJoue.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblInstrumentJoue.setForeground(new Color(205, 92, 92));
+		lblInstrumentJoue.setBounds(10, 185, 109, 14);
+		frame.getContentPane().add(lblInstrumentJoue);
 		
-		JLabel lblSportPratique = new JLabel("Sport pratiqu\u00E9 :");
-		lblSportPratique.setForeground(new Color(205, 92, 92));
-		lblSportPratique.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblSportPratique.setBounds(10, 210, 100, 14);
-		frame.getContentPane().add(lblSportPratique);
 		
 		codeEtudiant = new JTextField();
 		codeEtudiant.setBounds(120, 120, 109, 20);
@@ -130,15 +123,10 @@ public class AjouterEtudiantSHN {
 		frame.getContentPane().add(age);
 		age.setColumns(10);
 		
-		pole = new JTextField();
-		pole.setBounds(119, 180, 110, 20);
-		frame.getContentPane().add(pole);
-		pole.setColumns(10);
-		
-		sportPratique = new JTextField();
-		sportPratique.setBounds(120, 210, 109, 20);
-		frame.getContentPane().add(sportPratique);
-		sportPratique.setColumns(10);
+		instrumentJoue = new JTextField();
+		instrumentJoue.setBounds(119, 180, 110, 20);
+		frame.getContentPane().add(instrumentJoue);
+		instrumentJoue.setColumns(10);
 		
 		JButton btnValider = new JButton("Valider");
 		
@@ -146,9 +134,9 @@ public class AjouterEtudiantSHN {
 			public void actionPerformed(ActionEvent e) {
 				try {
 	
-					Sportif sp = new Sportif (nom.getText(),prenom.getText(), 
+					Musicien mu = new Musicien (nom.getText(),prenom.getText(), 
 							Integer.parseInt(codeEtudiant.getText()), 
-							Integer.parseInt(age.getText()), pole.getText(), sportPratique.getText());
+							Integer.parseInt(age.getText()), instrumentJoue.getText());
 				} catch (NumberFormatException | IOException e1) {
 					
 					e1.printStackTrace();
@@ -172,8 +160,7 @@ public class AjouterEtudiantSHN {
 				prenom.setText("");
 				codeEtudiant.setText("");
 				age.setText("");
-				pole.setText("");
-				sportPratique.setText("");
+				instrumentJoue.setText("");
 			}
 		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
@@ -182,3 +169,7 @@ public class AjouterEtudiantSHN {
 		frame.getContentPane().add(btnNewButton_1);
 	}
 }
+
+
+
+	

@@ -20,6 +20,7 @@ public class Musicien extends Etudiant {
 		jsonob.put ("prenom", p);
 		jsonob.put ("codeEtudiant", cE);
 		jsonob.put ("age", a);
+		jsonob.put("instrumentJoue", iJ);
 		
 		FileWriter file = new FileWriter(n+".json");
 		file.write(jsonob.toString());

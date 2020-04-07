@@ -25,7 +25,7 @@ public class Etudiant {
 		
 		
 		
-		JSONObject jsonob = new JSONObject ();
+		/*JSONObject jsonob = new JSONObject ();
 		jsonob.put ("nom", n);
 		jsonob.put ("prenom", p);
 		jsonob.put ("codeEtudiant", cE);
@@ -36,7 +36,7 @@ public class Etudiant {
 		file.flush();
 		file.close();
 		System.out.println(jsonob);
-	}
+	*/}
 	
 	public void setNom (String n) {
 		this.nom = n;

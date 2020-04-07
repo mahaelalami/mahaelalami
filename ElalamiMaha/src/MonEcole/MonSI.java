@@ -4,7 +4,9 @@ import java.io.IOException;
 
 import javax.swing.JTable;
 
-import mesInterfaces.AjouterEtudiantSHN;
+import mesInterfaces.Accueil;
+import mesInterfaces.AjouterEtudiantMusicien;
+import mesInterfaces.AjouterEtudiantSportif;
 
 public class MonSI {
 
@@ -51,15 +53,13 @@ public class MonSI {
 		fenetrePrincipale.setVisible(true);
 
 		
+
 		
 		
+		new Accueil();
+		//new AjouterEtudiantSportif ();
+		//new AjouterEtudiantMusicien();
 		
-		
-		
-		
-		
-		
-		new AjouterEtudiantSHN ();
 		
 	
 

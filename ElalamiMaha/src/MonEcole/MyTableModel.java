@@ -51,10 +51,6 @@ public class MyTableModel extends AbstractTableModel {
 		
 		
 	}
-	
-	
-	
-
-	
+		
 
 }
