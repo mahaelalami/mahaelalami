@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 
 import MonEcole.Ecole;
 import MonEcole.Etudiant;
-import MonEcole.Fenetre;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;

@@ -1,9 +1,11 @@
-package MonEcole;
+package mesInterfaces;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
+
+import MonEcole.Etudiant;
 
 public class MyTableModel extends AbstractTableModel {
 	

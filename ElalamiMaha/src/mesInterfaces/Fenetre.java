@@ -1,8 +1,10 @@
-package MonEcole;
+package mesInterfaces;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+
+import MonEcole.Etudiant;
 
 public class Fenetre extends JFrame {
 	

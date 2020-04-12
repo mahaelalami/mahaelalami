@@ -1,4 +1,4 @@
-package MonEcole;
+package mesInterfaces;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
+import MonEcole.Etudiant;
 
 public class ConteneurFenetre extends JPanel {
 	
