@@ -7,10 +7,13 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import MonEcole.Ecole;
+import MonEcole.Etudiant;
 import MonEcole.Fenetre;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class Accueil {
@@ -87,12 +90,13 @@ public class Accueil {
 		btnAjouterUnNouvel.setBounds(25, 126, 383, 36);
 		frame.getContentPane().add(btnAjouterUnNouvel);
 		
-		JButton btnListeDestudiants = new JButton("Liste des \u00E9tudiants");
+		JButton btnListeDestudiants = new JButton("Liste des nouveaux \u00E9tudiants");
 		btnListeDestudiants.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		btnListeDestudiants.setForeground(new Color(220, 20, 60));
 		btnListeDestudiants.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Fenetre(null);
+				Ecole ecole = Ecole.getInstance();
+				new Fenetre(ecole.getEtudiants());
 			}
 		});
 		btnListeDestudiants.setBounds(25, 190, 383, 36);

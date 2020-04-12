@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import MonEcole.Ecole;
 import MonEcole.Musicien;
 import MonEcole.Sportif;
 
@@ -137,6 +138,7 @@ public class AjouterEtudiantMusicien {
 					Musicien mu = new Musicien (nom.getText(),prenom.getText(), 
 							Integer.parseInt(codeEtudiant.getText()), 
 							Integer.parseInt(age.getText()), instrumentJoue.getText());
+					Ecole.getInstance().ajouterEtudiant(mu);
 				} catch (NumberFormatException | IOException e1) {
 					
 					e1.printStackTrace();

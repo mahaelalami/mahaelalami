@@ -22,6 +22,7 @@ public class Fenetre extends JFrame {
 		this.setAlwaysOnTop(true);
 		pan = new ConteneurFenetre(etudiants);
 		this.setContentPane(pan);
+		this.setVisible(true);
 
 	}
 

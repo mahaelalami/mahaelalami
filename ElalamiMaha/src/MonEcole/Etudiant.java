@@ -1,9 +1,9 @@
 package MonEcole;
 
-import java.io.FileWriter;
+
 import java.io.IOException;
 
-import org.json.simple.JSONObject;
+
 
 public class Etudiant {
 	private String nom, prenom ;
@@ -20,23 +20,8 @@ public class Etudiant {
 		} catch (SaisieErroneeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	
-		
-		
-		
-		/*JSONObject jsonob = new JSONObject ();
-		jsonob.put ("nom", n);
-		jsonob.put ("prenom", p);
-		jsonob.put ("codeEtudiant", cE);
-		jsonob.put ("age", a);
-		
-		FileWriter file = new FileWriter(n+".json");
-		file.write(jsonob.toString());
-		file.flush();
-		file.close();
-		System.out.println(jsonob);
-	*/}
+		}	
+	}
 	
 	public void setNom (String n) {
 		this.nom = n;

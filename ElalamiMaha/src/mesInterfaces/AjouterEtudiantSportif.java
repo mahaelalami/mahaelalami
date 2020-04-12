@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 
+import MonEcole.Ecole;
 import MonEcole.Sportif;
 
 import javax.swing.JButton;
@@ -149,6 +150,7 @@ public class AjouterEtudiantSportif {
 					Sportif sp = new Sportif (nom.getText(),prenom.getText(), 
 							Integer.parseInt(codeEtudiant.getText()), 
 							Integer.parseInt(age.getText()), pole.getText(), sportPratique.getText());
+					Ecole.getInstance().ajouterEtudiant(sp);
 				} catch (NumberFormatException | IOException e1) {
 					
 					e1.printStackTrace();
